@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: 南丞
  * Date: 2019/2/15
- * Time: 12:48
+ * Time: 16:37
  *
  *
  *                      _ooOoo_
@@ -29,39 +29,9 @@
  *
  */
 
-namespace pf\encryption;
+namespace pf\encryption\build;
 
-use pf\encryption\build\Base;
-
-class Encryption
+class Base
 {
-    protected static $link;
 
-    protected function driver()
-    {
-        self::$link = new Base();
-        return $this;
-    }
-
-    public function __call($name, $arguments)
-    {
-        if (!self::$link) {
-            $this->driver();
-        }
-        return call_user_func_array([self::$link, $name], $arguments);
-    }
-
-    public static function single()
-    {
-        static $link = null;
-        if (is_null($link)) {
-            $link = new static();
-        }
-        return $link;
-    }
-
-    public static function __callStatic($name, $arguments)
-    {
-        return call_user_func_array([static::single(), $name], $arguments);
-    }
 }
