@@ -33,5 +33,7 @@ namespace pf\encryption\build;
 
 class Base
 {
+    protected $config;
+    protected $secureKey = '';
 
 }
