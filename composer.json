@@ -19,7 +19,7 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "nancheng/pfinal-config": "dev-master"
+    "nancheng/pfinal-config": "v0.1"
   },
   "autoload": {
     "psr-4": {
